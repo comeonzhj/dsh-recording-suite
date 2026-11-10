@@ -24,7 +24,7 @@
 //   {"ok":false,"error":"...","code":"..."}
 // stderr carries human progress only; it is never parsed.
 //
-// Protocol behavior based on public reverse-engineering notes (see ACKNOWLEDGEMENTS):
+// Protocol behavior based on public reverse-engineering notes (see README acknowledgements):
 // 08EE frames, 09FF packet assembly, 01/01 device info, 1B/0E file list,
 // 18/82 record control, 1A/07 export header, 1A/08/12 slices, 1A/0A done,
 // 1A/10 delete, 2E/01 ECDH + HKDF-SHA256 session key, CommonCrypto AES-CTR.
