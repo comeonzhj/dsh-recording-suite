@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key>
+  <string>local.dsh.recording.apple-transcribe</string>
+  <key>CFBundleName</key>
+  <string>DSH Recording Speech Helper</string>
+  <key>CFBundleExecutable</key>
+  <string>apple_transcribe</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>DSH 录音套件使用语音识别把本机录音转写为 Markdown 文本。</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>DSH 录音套件不直接使用麦克风；该描述仅用于系统权限检查。</string>
+</dict>
+</plist>

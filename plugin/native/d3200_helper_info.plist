@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleIdentifier</key>
+  <string>local.dsh.recording.d3200-helper</string>
+  <key>CFBundleName</key>
+  <string>DSH Recording D3200 Helper</string>
+  <key>CFBundleExecutable</key>
+  <string>d3200_helper</string>
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>DSH 录音套件通过蓝牙连接安克录音豆（soundcore Work / D3200），在本机导出并解密录音。</string>
+  <key>NSBluetoothPeripheralUsageDescription</key>
+  <string>DSH 录音套件通过蓝牙连接安克录音豆（soundcore Work / D3200），在本机导出并解密录音。</string>
+</dict>
+</plist>

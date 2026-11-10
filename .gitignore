@@ -1,0 +1,10 @@
+/references/
+.DS_Store
+node_modules/
+plugin/node_modules/
+!plugin/client.js
+plugin/.build/
+apple/build/
+apple/DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/

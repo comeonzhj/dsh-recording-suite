@@ -1,0 +1,8 @@
+Use case: logo-brand
+Asset type: production iPhone and Apple Watch app icon, one square 1024x1024 image.
+Primary request: express whale + connection + audio recording for a companion suite recording on Apple Watch, transferring to iPhone and syncing to a DeepSeek desktop plugin. Whale evokes DeepSeek.
+Style: premium minimal bold flat graphic app icon, highly legible at tiny sizes, confident simple geometry.
+Scene/backdrop: full bleed rich cobalt blue with a very subtle blue depth gradient, opaque square canvas.
+Subject: one beautiful friendly white whale silhouette in side view swimming toward the right, with a graceful raised tail on the left, a tiny blue eye. Integrate three short cobalt rounded audio waveform bars as negative space in the whale's large body. Above the whale's head, two clean cyan curved signal arcs and one small cyan endpoint subtly communicate wireless connection. Unified emblem with very few shapes and ample visual breathing room.
+Composition: centered emblem within central 72% of canvas so every feature survives a circular watchOS mask; whale dominates. Strong balanced silhouette.
+Constraints: no text, no lettering, no watermark, no device mockup, no surrounding layout, no border, no pre-rounded outer corners, no shadows outside icon, no photographic textures, no extra objects. Deliver ONLY the full square icon artwork.

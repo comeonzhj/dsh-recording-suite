@@ -1,0 +1,113 @@
+# XcodeGen 配置：不用打开 Xcode 手工建工程。
+# 用法：cd apple && xcodegen generate
+#
+# 三个 target：
+#   DSHRecordingWatch        watchOS App（录音、播放、WatchConnectivity 发送）
+#   DSHRecordingWatchWidgets watchOS Widget Extension（表盘 complication，widgetURL dshrec://record）
+#   DSHRecordingPhone        iOS App（接收手表录音、UDP 发现电脑、HTTP 上传）
+name: DSHRecording
+
+options:
+  bundleIdPrefix: com.local
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "11.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: false
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_EMIT_LOC_STRINGS: NO
+
+targets:
+  # ---------------------------------------------------------------- watchOS App
+  DSHRecordingWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: WatchApp
+      - path: Shared
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_FILE: WatchApp/Info.plist
+        PRODUCT_NAME: DSHRecordingWatch
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.dshrecording.watchkitapp
+        WATCHOS_DEPLOYMENT_TARGET: "11.0"
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: YES
+    dependencies:
+      - target: DSHRecordingWatchWidgets
+        embed: true
+
+  # ------------------------------------------------------ watchOS Widget Extension
+  DSHRecordingWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: WatchWidgets
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        INFOPLIST_FILE: WatchWidgets/Info.plist
+        PRODUCT_NAME: DSHRecordingWatchWidgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.dshrecording.watchkitapp.widgets
+        WATCHOS_DEPLOYMENT_TARGET: "11.0"
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+
+  # ------------------------------------------------------------------ iOS App
+  DSHRecordingPhone:
+    type: application
+    platform: iOS
+    sources:
+      - path: iPhoneApp
+      - path: Shared
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_FILE: iPhoneApp/Info.plist
+        PRODUCT_NAME: DSHRecordingPhone
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.dshrecording
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+    dependencies:
+      # Watch App 需要嵌到 iOS App 的 Watch/ 目录下（Embed Watch Content）。
+      - target: DSHRecordingWatch
+        embed: true
+        codeSign: true
+        copy:
+          destination: productsDirectory
+          subpath: "$(CONTENTS_FOLDER_PATH)/Watch"
+
+schemes:
+  DSHRecordingWatch:
+    build:
+      targets:
+        DSHRecordingWatch: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+  DSHRecordingPhone:
+    build:
+      targets:
+        DSHRecordingPhone: all
+    run:
+      config: Debug
+    archive:
+      config: Release

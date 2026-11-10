@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Recording suite",
+    "description": "Import recordings from soundcore Work (D3200) and Apple Watch, transcribe them locally or with a third-party ASR, and reference the Markdown transcripts with @ in any conversation."
+  }
+}

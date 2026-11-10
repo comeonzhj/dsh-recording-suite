@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "录音套件",
+    "description": "从安克录音豆（D3200）与 Apple Watch 导入录音，用本机或第三方 ASR 转录为 Markdown，并可在任意会话里用 @ 直接引用。"
+  }
+}

@@ -1,0 +1,10 @@
+- insert:
+    - id: recording-suite
+      name: '@local/dsh-recording-suite'
+      config:
+        provider: apple
+        language: zh-CN
+        storageDir: ''
+        watchImport:
+          enabled: true
+          port: 47831

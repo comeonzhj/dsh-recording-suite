@@ -1,0 +1,8 @@
+# xcodegen 生成的工程与构建产物（根目录 .gitignore 已忽略 *.xcodeproj，这里额外兜底）
+.build/
+.build-dest/
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+.DS_Store
